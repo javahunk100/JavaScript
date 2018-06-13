@@ -3,10 +3,9 @@
 <head>
  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery-3.3.1.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 <title>WOW</title>
    <script>
    	 console.log("Hello I am learning JavaScript!");  	
@@ -15,16 +14,27 @@
    	 var temp=num1+num2;
    	 console.log(temp);
    	 
-   	 function clearText(){
+   	 function clearMessage(){
+   	  var tspan=document.getElementById("errorMessage");
+	  tspan.innerHTML=""
+   	 }
+   	 
+   	 function clearText() {
    		document.getElementById("himage").src="img/math.png";
    		document.calform.fact.value="";
    		document.calform.result.value="";
    	 }
    	 
    	 function calfact() {
-   		
    		 //reading value from input text 
    		 var num=document.calform.fact.value;
+   		 if(num.length==0) {
+   			  var tspan=document.getElementById("errorMessage");
+    		  tspan.innerHTML="Number cannot be empty."
+   			  document.calform.fact.focus();
+   			  return;
+   		 }
+   	 
    		 console.log("hey ! you typed  = "+num);
    		 var sum=1;
    		 for(var x=2;x<=num;x++){
@@ -50,7 +60,8 @@
 	   <form name="calform">
     <div class="form-group">
       <label for="name">Enter Number:</label>
-      <input type="text" class="form-control"  name="fact" style="width: 40%"/>
+      <input type="text" class="form-control"  name="fact" style="width: 40%" onkeypress="clearMessage();"/>
+       <span style="color:red;font-size: 18px;" id="errorMessage">cs</span>
     </div>
     <button type="button" class="btn btn-primary" onclick="calfact();">Cal Fact</button>
      <button type="button" class="btn btn-primary" onclick="clearText();">Clear</button>

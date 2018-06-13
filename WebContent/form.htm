@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery-3.3.1.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+<title>WOW</title>
+   <script src="js/profile.js">
+   </script>
+
+</head>
+
+<body>
+	<header style="height: 45px;background-color: #befff5;">
+	  <h2>Learning javaScript</h2> 	
+	  	</header>
+	  <div class="container">
+	  <br/><br/><br/>
+	  <table style="width: 100%">
+	  <tr>
+	  <td style="width:50%">
+	     <h3>User Profile Form</h3>
+	   <img src="img/math.png" id="himage" style="height: 60px;"/>
+	   <br/>
+	   <form name="profileform">
+    <div class="form-group">
+      <label for="name">Name:
+      <span style="color:red;font-size: 20px;">*</span>
+      </label>
+      <input type="text" class="form-control"  name="name" onkeyup="clearErrorMessage();"/>
+         <span style="color:red;font-size: 18px;" id="nameError"></span>
+    </div>
+    
+       <div class="form-group">
+      <label for="email">Email:
+        <span style="color:red;font-size: 20px;">*</span>
+      </label>
+      <input type="text" class="form-control"  name="email" onkeyup="clearErrorMessage();"/>
+       <span style="color:red;font-size: 18px;" id="emailError"></span>
+    </div>
+    
+    
+       <div class="form-group">
+      <label for="mobile">Mobile:</label>
+      <input type="text" class="form-control"  name="mobile" onkeyup="clearErrorMessage();"/>
+         <span style="color:red;font-size: 18px;" id="mobileError"></span>
+    </div>
+    
+    
+       <div class="form-group">
+      <label for="gender">Gender:</label>
+      <select  class="form-control"  name="gender">
+      	<option>Male</option>
+      	<option>Female</option>
+      </select>
+    </div>
+    
+       <div class="form-group">
+      <label for="address">Address:</label>
+      <textarea  class="form-control"  name="address" cols="20" rows="2"></textarea>
+    </div>
+    
+    <button type="button" class="btn btn-primary" onclick="validateForm();">Add Profile</button>
+     <button type="reset" class="btn btn-primary">Clear</button>
+    <hr/>
+  </form>
+	  </td>
+		<td style="width: 50%;margin-left: 100px;padding-left: 30px;">
+		 	<img src="img/services-students1.png" style=";">
+		</td>	
+  </tr>
+  </table>
+	  
+</div>
+	
+
+</body>
+</html>
